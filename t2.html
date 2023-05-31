@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="first" placeholder="1st">
+    <input type="text" id="second" placeholder="2nd">
+    <input type="text" id="table" placeholder="table">
+    <button id="button">Print</button>
+    <p id="ans"></p>
+    <input type="text" id="fact" placeholder="enter the no for factorial">
+    <button id="button2">Print Factorial</button>
+    <p id="ans2"></p>
+    <div class="" id="box"></div>
+    <input type="text" id="a1" placeholder="width" >
+    <input type="text" id="a2" placeholder="height">
+    <input type="text" id="a3" placeholder="backgroundColor">
+    <input type="text" id="a4" placeholder="color">
+    <input type="text" id="a5" placeholder="text">
+    <button id="btn_box">Box</button>
+    <div id="demo" style="text-align: center;"></div>
+    <div class="row mt-5 justify-content-center">
+    <div class="col-5">
+    <input type="text" id="p1" placeholder="player1" class="form-control">
+     </div>
+     <div class="col-5">
+        <input type="text" id="p2" placeholder="player2" class="form-control">
+    </div>
+    </div>
+    <div class="text-center">
+    <button id="reset" class="rounded-pill btn-lg mt-4 ">Reset</button>
+    </div>
+    <div class="h3 mt-5 text-danger text-center">
+        Player 1 symbol is "X"
+    </div>
+    <div class="h3 text-danger text-center">
+        Player 2 symbol is "O"
+    </div>
+    <!-- grid design-->
+    <div class="row mt-5 justify-content-center">
+    <div class="col-xl-3 col-lg-4 col-sm-6 col-6 col-md-6">
+        <div class="row justify-content-center">
+          <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        <div class="col-4 p-1">
+            <div class="fs-1 border rounded-3 text-center py-2  para">
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+    <div class="text-center h2 mt-4" id="result"></div>
+    <script>
+
+        //table
+        var a=document.getElementById("first");
+        var b=document.getElementById("second");
+        var c=document.getElementById("table");
+        var button = document.getElementById('button');
+        button.addEventListener("click",function()
+        {
+            for(var i=a.value;i<=b.value;i++)
+            {
+                var result=i*c.value;
+                document.getElementById("ans").innerHTML+= i + " x " + c.value + "=" + result + "<br>";
+            }
+        })
+    
+    
+        //FACTORIAL
+        var fac=document.getElementById('fact');
+        var button2 = document.getElementById('button2');
+        button2.addEventListener("click",function()
+        {
+            var factorial=1;
+            if(fac.value!=0)
+            {
+                for(var i=2;i<=fac.value;i++)
+                 {
+                    factorial=factorial*i;
+                  }
+            }
+            document.getElementById('ans2').innerHTML="The factorial is: "+factorial+"<br>";
+        });
+    
+        //box printing
+ 
+        
+         document.getElementById('btn_box').addEventListener("click",function()
+         {
+            var width_1 = document.getElementById('a1').value;
+            var height_1 = document.getElementById('a2').value;
+            var bgcolor = document.getElementById('a3').value;
+            var text_color = document.getElementById('a4').value;
+            var text_1 = document.getElementById('a5').value;
+            var box = document.createElement('div');
+            box.style.color=text_color;
+            box.innerHTML=text_1;
+            box.style.backgroundColor=bgcolor;
+            box.style.height=height_1;
+            box.style.display="inline-block";
+            box.style.width=width_1;
+            box.style.margin="10px";
+            document.getElementById('demo').appendChild(box);
+         });
+
+         //tic tak toe
+
+         var player_1=true;
+         var player_2=false;
+         var g1=document.getElementsByClassName('para')[0];
+         var g2=document.getElementsByClassName('para')[1];
+         var g3=document.getElementsByClassName('para')[2];
+         var g4=document.getElementsByClassName('para')[3];
+         var g5=document.getElementsByClassName('para')[4];
+         var g6=document.getElementsByClassName('para')[5];
+         var g7=document.getElementsByClassName('para')[6];
+         var g8=document.getElementsByClassName('para')[7];
+         var g9=document.getElementsByClassName('para')[8];
+         for(var i=0;i<9;i++)
+         {
+            document.getElementsByClassName('para')[i].style.backgroundColor="green";
+         }
+         for(var i=0;i<9;i++)
+         {
+            document.getElementsByClassName('para')[i].textContent=null;
+         }
+         for(var i=0;i<9;i++)
+         {
+            document.getElementsByClassName('para')[i].style.height="80px";
+         }
+         var reset_button=document.getElementById('reset');
+         reset_button.addEventListener("click",function()
+         {
+            window.location.reload();
+         });
+
+            g1.addEventListener("click",function()
+            {  
+            if(g1.textContent!="X" && g1.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g1.textContent="X";
+                if((g2.textContent==g1.textContent && g1.textContent==g3.textContent) || (g4.textContent==g1.textContent && g1.textContent==g7.textContent) || (g5.textContent==g1.textContent && g1.textContent==g9.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g2.textContent==g1.textContent && g1.textContent==g3.textContent)
+                    {
+                      g1.style.color="white";
+                      g2.style.color="white";
+                      g3.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    else if(g4.textContent==g1.textContent && g1.textContent==g7.textContent)
+                    {
+                      g1.style.color="white";
+                      g4.style.color="white";
+                      g7.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g1.style.color="white";
+                      g5.style.color="white";
+                      g9.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g1.textContent="O";
+                if((g2.textContent==g1.textContent && g1.textContent==g3.textContent) || (g4.textContent==g1.textContent && g1.textContent==g7.textContent) || (g5.textContent==g1.textContent && g1.textContent==g9.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g2.textContent==g1.textContent && g1.textContent==g3.textContent)
+                    {
+                      g1.style.color="white";
+                      g2.style.color="white";
+                      g3.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    else if(g4.textContent==g1.textContent && g1.textContent==g7.textContent)
+                    {
+                      g1.style.color="white";
+                      g4.style.color="white";
+                      g7.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g1.style.color="white";
+                      g5.style.color="white";
+                      g9.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                 //do nothing
+              }
+            }
+           });
+           g2.addEventListener("click",function()
+            {  
+            if(g2.textContent!="X" && g2.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g2.textContent="X";
+                if((g1.textContent==g2.textContent && g2.textContent==g3.textContent) || (g2.textContent==g5.textContent && g2.textContent==g8.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g1.textContent==g2.textContent && g2.textContent==g3.textContent)
+                    {
+                      g1.style.color="white";
+                      g2.style.color="white";
+                      g3.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g2.style.color="white";
+                      g5.style.color="white";
+                      g8.style.color="white";
+                      g2.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g2.textContent="O";
+                if((g1.textContent==g2.textContent && g2.textContent==g3.textContent) || (g2.textContent==g5.textContent && g2.textContent==g8.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g1.textContent==g2.textContent && g2.textContent==g3.textContent)
+                    {
+                      g1.style.color="white";
+                      g2.style.color="white";
+                      g3.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g2.style.color="white";
+                      g5.style.color="white";
+                      g8.style.color="white";
+                      g2.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+            }
+           });
+           g3.addEventListener("click",function()
+            {  
+            if(g3.textContent!="X" && g3.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g3.textContent="X";
+                if((g2.textContent==g3.textContent && g1.textContent==g3.textContent) || (g3.textContent==g6.textContent && g3.textContent==g9.textContent) || (g3.textContent==g5.textContent && g3.textContent==g7.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g2.textContent==g3.textContent && g1.textContent==g3.textContent)
+                    {
+                      g1.style.color="white";
+                      g2.style.color="white";
+                      g3.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    else if(g3.textContent==g6.textContent && g3.textContent==g9.textContent)
+                    {
+                      g3.style.color="white";
+                      g6.style.color="white";
+                      g9.style.color="white";
+                      g3.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g3.style.color="white";
+                      g5.style.color="white";
+                      g7.style.color="white";
+                      g3.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g3.textContent="O";
+                if((g2.textContent==g3.textContent && g1.textContent==g3.textContent) || (g3.textContent==g6.textContent && g3.textContent==g9.textContent) || (g3.textContent==g5.textContent && g3.textContent==g7.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g2.textContent==g3.textContent && g1.textContent==g3.textContent)
+                    {
+                      g1.style.color="white";
+                      g2.style.color="white";
+                      g3.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    else if(g3.textContent==g6.textContent && g3.textContent==g9.textContent)
+                    {
+                      g3.style.color="white";
+                      g6.style.color="white";
+                      g9.style.color="white";
+                      g3.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g3.style.color="white";
+                      g5.style.color="white";
+                      g7.style.color="white";
+                      g3.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+              
+            }
+           });
+           g4.addEventListener("click",function()
+            {  
+            if(g4.textContent!="X" && g4.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g4.textContent="X";
+                if((g1.textContent==g4.textContent && g4.textContent==g7.textContent) || (g4.textContent==g5.textContent && g4.textContent==g6.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g1.textContent==g4.textContent && g4.textContent==g7.textContent)
+                    {
+                      g1.style.color="white";
+                      g4.style.color="white";
+                      g7.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g4.style.color="white";
+                      g5.style.color="white";
+                      g6.style.color="white";
+                      g4.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g4.textContent="O";
+                if((g1.textContent==g4.textContent && g4.textContent==g7.textContent) || (g4.textContent==g5.textContent && g4.textContent==g6.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g1.textContent==g4.textContent && g4.textContent==g7.textContent)
+                    {
+                      g1.style.color="white";
+                      g4.style.color="white";
+                      g7.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g4.style.color="white";
+                      g5.style.color="white";
+                      g6.style.color="white";
+                      g4.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+            }
+           });
+           g5.addEventListener("click",function()
+            {  
+            if(g5.textContent!="X" && g5.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g5.textContent="X";
+                if((g5.textContent==g2.textContent && g5.textContent==g8.textContent) || (g4.textContent==g5.textContent && g5.textContent==g6.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g5.textContent==g2.textContent && g5.textContent==g8.textContent)
+                    {
+                      g5.style.color="white";
+                      g2.style.color="white";
+                      g8.style.color="white";
+                      g5.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g4.style.color="white";
+                      g5.style.color="white";
+                      g6.style.color="white";
+                      g4.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g5.textContent="O";
+                if((g5.textContent==g2.textContent && g5.textContent==g8.textContent) || (g4.textContent==g5.textContent && g5.textContent==g6.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g5.textContent==g2.textContent && g5.textContent==g8.textContent)
+                    {
+                      g5.style.color="white";
+                      g2.style.color="white";
+                      g8.style.color="white";
+                      g5.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g4.style.color="white";
+                      g5.style.color="white";
+                      g6.style.color="white";
+                      g4.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+            }
+           });
+           g6.addEventListener("click",function()
+            {  
+            if(g6.textContent!="X" && g6.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g6.textContent="X";
+                if((g5.textContent==g6.textContent && g6.textContent==g4.textContent) || (g6.textContent==g3.textContent && g6.textContent==g9.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g5.textContent==g6.textContent && g6.textContent==g4.textContent)
+                    {
+                      g5.style.color="white";
+                      g6.style.color="white";
+                      g4.style.color="white";
+                      g5.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g6.style.color="white";
+                      g3.style.color="white";
+                      g9.style.color="white";
+                      g6.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g6.textContent="O";
+                if((g5.textContent==g6.textContent && g6.textContent==g4.textContent) || (g6.textContent==g3.textContent && g6.textContent==g9.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g5.textContent==g6.textContent && g6.textContent==g4.textContent)
+                    {
+                      g5.style.color="white";
+                      g6.style.color="white";
+                      g4.style.color="white";
+                      g5.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g6.style.color="white";
+                      g3.style.color="white";
+                      g9.style.color="white";
+                      g6.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+            }
+           });
+           g7.addEventListener("click",function()
+            {  
+            if(g7.textContent!="X" && g7.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g7.textContent="X";
+                if((g1.textContent==g7.textContent && g7.textContent==g4.textContent) || (g7.textContent==g8.textContent && g7.textContent==g9.textContent) || (g7.textContent==g5.textContent && g3.textContent==g7.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g1.textContent==g7.textContent && g7.textContent==g4.textContent)
+                    {
+                      g1.style.color="white";
+                      g4.style.color="white";
+                      g7.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                    }
+                    else if(g7.textContent==g8.textContent && g7.textContent==g9.textContent)
+                    {
+                      g7.style.color="white";
+                      g8.style.color="white";
+                      g9.style.color="white";
+                      g8.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g7.style.color="white";
+                      g5.style.color="white";
+                      g3.style.color="white";
+                      g7.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g7.textContent="O";
+                if((g1.textContent==g7.textContent && g7.textContent==g4.textContent) || (g7.textContent==g8.textContent && g7.textContent==g9.textContent) || (g7.textContent==g5.textContent && g3.textContent==g7.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g1.textContent==g7.textContent && g7.textContent==g4.textContent)
+                    {
+                      g1.style.color="white";
+                      g4.style.color="white";
+                      g7.style.color="white";
+                      g1.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g4.style.backgroundColor="orange";
+                    }
+                    else if(g7.textContent==g8.textContent && g7.textContent==g9.textContent)
+                    {
+                      g7.style.color="white";
+                      g8.style.color="white";
+                      g9.style.color="white";
+                      g8.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g9.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g7.style.color="white";
+                      g5.style.color="white";
+                      g3.style.color="white";
+                      g7.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+            }
+           });
+           g8.addEventListener("click",function()
+            {  
+            if(g8.textContent!="X" && g8.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g8.textContent="X";
+                if((g8.textContent==g7.textContent && g8.textContent==g9.textContent) || (g8.textContent==g5.textContent && g8.textContent==g2.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if (g8.textContent==g7.textContent && g8.textContent==g9.textContent)
+                    {
+                      g9.style.color="white";
+                      g8.style.color="white";
+                      g7.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g5.style.color="white";
+                      g8.style.color="white";
+                      g2.style.color="white";
+                      g5.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g8.textContent="O";
+                if((g8.textContent==g7.textContent && g8.textContent==g9.textContent) || (g8.textContent==g5.textContent && g8.textContent==g2.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if (g8.textContent==g7.textContent && g8.textContent==g9.textContent)
+                    {
+                      g9.style.color="white";
+                      g8.style.color="white";
+                      g7.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    else
+                    {
+                      g5.style.color="white";
+                      g8.style.color="white";
+                      g2.style.color="white";
+                      g5.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                      g2.style.backgroundColor="orange";
+
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+            }
+           });
+           g9.addEventListener("click",function()
+            {  
+            if(g9.textContent!="X" && g9.textContent!="O")
+            {
+              if(player_1==true)
+              {
+                g9.textContent="X";
+                if((g9.textContent==g7.textContent && g9.textContent==g8.textContent) || (g9.textContent==g6.textContent && g9.textContent==g3.textContent) || (g9.textContent==g5.textContent && g9.textContent==g1.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 1 wins";
+                    if(g9.textContent==g7.textContent && g9.textContent==g8.textContent)
+                    {
+                      g9.style.color="white";
+                      g7.style.color="white";
+                      g8.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    else if (g9.textContent==g6.textContent && g9.textContent==g3.textContent)
+                    {
+                      g9.style.color="white";
+                      g6.style.color="white";
+                      g3.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    } 
+                    else
+                    {
+                      g9.style.color="white";
+                      g5.style.color="white";
+                      g1.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g1.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_1=false;
+                   player_2=true;
+                }
+              }
+              else if(player_2==true)
+              {
+                g9.textContent="O";
+                if((g9.textContent==g7.textContent && g9.textContent==g8.textContent) || (g9.textContent==g6.textContent && g9.textContent==g3.textContent) || (g9.textContent==g5.textContent && g9.textContent==g1.textContent))
+                {
+                    document.getElementById('result').innerHTML="Player 2 wins";
+                    if(g9.textContent==g7.textContent && g9.textContent==g8.textContent)
+                    {
+                      g9.style.color="white";
+                      g7.style.color="white";
+                      g8.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g7.style.backgroundColor="orange";
+                      g8.style.backgroundColor="orange";
+                    }
+                    else if (g9.textContent==g6.textContent && g9.textContent==g3.textContent)
+                    {
+                      g9.style.color="white";
+                      g6.style.color="white";
+                      g3.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g6.style.backgroundColor="orange";
+                      g3.style.backgroundColor="orange";
+                    } 
+                    else
+                    {
+                      g9.style.color="white";
+                      g5.style.color="white";
+                      g1.style.color="white";
+                      g9.style.backgroundColor="orange";
+                      g5.style.backgroundColor="orange";
+                      g1.style.backgroundColor="orange";
+                    }
+                    player_1=false;
+                    player_2=false;
+                }
+                else
+                {
+                   player_2=false;
+                   player_1=true;
+                }
+              }
+              else
+              {
+                //do nothing
+              }
+            }
+           });
+    </script>
+    
+</body>
+
+</html>
+

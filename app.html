@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="main">
+    <div class="container mt-5 border pb-5">
+        <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="display-6 fw-bolder text-center mt-5">Sign-up</div>
+            <div class="container mt-5">
+         <input type="text" class="form-control mt-2" placeholder="name" id="name">
+         <input type="text" placeholder="email" class="form-control mt-2" id="email">
+         <input type="password" name="" id="pass" placeholder="password" class="form-control mt-2">
+        <div class="text-center"><button class="rounded-pill mt-4 fs-4" id="bs" onclick="to_login()">Register</button></div> 
+        </div>
+        </div>
+   </div>
+</div>
+</div>
+
+  <script>
+    let array=[];
+    let array_income=[];
+    let array_expense=[];
+     function to_login()
+     {
+        var a=document.getElementById('name');
+        var b=document.getElementById('email');
+        var c=document.getElementById('pass');
+         let obj={name:"",email:"",password:""};
+         obj.name=a.value;
+         obj.email=b.value;
+         obj.password=c.value;
+         array.push(obj);
+        document.getElementById('main').innerHTML="";
+        let output="";
+        output="\
+        <div class='container mt-5 border pb-5'>\
+        <div class='row justify-content-center'>\
+        <div class='col-8'>\
+            <div class='display-6 fw-bolder text-center mt-5'>Log-in</div>\
+            <div class='container mt-5'>\
+         <input type='text' placeholder='email' class='form-control mt-2' id='email2'>\
+         <input type='password' id='pass2' placeholder='password' class='form-control mt-2'>\
+        <div class='text-center'><button class='rounded-pill mt-4 fs-4' id='bl' onclick='to_dashboard()''>Log-in</button></div> \
+        </div>\
+        </div>\
+        </div>\
+          </div>";
+        document.getElementById('main').innerHTML=output;
+
+     }
+     function to_dashboard()
+     {
+
+        var check2=document.getElementById('email2');
+        var check3=document.getElementById('pass2');
+        if(array[0].email==check2.value && array[0].password==check3.value)
+        {
+            document.getElementById('main').innerHTML="";
+            disp_dashboard();
+        }
+        else
+        {
+            alert("Incorrect entry");
+        }
+     }
+     function   disp_dashboard()
+     {
+        let output="";
+        output="\
+        <div class='container mt-5 border pb-5'>\
+        <div class='row justify-content-center'>\
+          <div class='col-3 mt-5' style='background-color:black; color:white'>\
+            <div class='fs-4 fw-bold'>Dashboard</div>\
+            <button class='fs-6 mt-4 rounded-pill text-center' id='add_in' onclick='add_income()'>Add income</button>\
+            <button class='fs-6 mt-4 rounded-pill text-center' id='add_ex' onclick='add_expense()'>Add expense</button>\
+            <button class='fs-6 mt-4 rounded-pill text-center' id='view_in' onclick='view_income()'>View income</button>\
+            <button class='fs-6 mt-4 rounded-pill text-center' id='add_ex' onclick='view_expense()' >View expense</button>\
+            <button class='fs-6 mt-4 rounded-pill text-center' id='view_dashboard' onclick='view_dash()' >View Dash Board</button>\
+           </div>\
+            <div class='col-9 mt-5 fw-bolder' id='dash'>\
+            <div class='row justify-content-center'>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Today Expense</div>\
+                <div class='text-center' id='t_ex'>0</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Last Week Expense</div>\
+                <div class='text-center' id='w_ex'>0</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Last Month Expense</div>\
+                <div class='text-center' id='m_ex'>0</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Last Month Income</div>\
+                <div class='text-center' id='m_in'>0</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>This Month Income Saving</div>\
+                <div class='text-center' id='s_in'>0</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Percent Chart</div>\
+                <div class='text-center' >0%</div>\
+            </div>\
+        </div>\
+        </div>\
+        </div>\
+        </div>";
+        document.getElementById('main').innerHTML=output;
+    }
+    function view_income()
+    {
+        output="\
+        <div class=''>\
+        <div class='container mt-5'>\
+            <div class='text-center'>Income Detail</div>'\
+            <div class='mt-5 text-center row justify-content-center'>\
+            <div class='col-4 fw-bolder'>Title</div>\
+            <div class='col-4 fw-bolder'>Date</div>\
+            <div class='col-4 fw-bolder'>Amount</div>\
+            </div>\
+            </div>\
+            </div>";
+        let s1="";
+        for(let x in array_income)
+        {
+           s1+="\
+           <div class='' id='dash'>\
+           <div  class='container mt-5'>\
+           <div class='row text-center justify-content-center'>\
+            <div class='col-4'>"+array_income[x].title+"</div>\
+            <div class='col-4'>"+array_income[x].date.getDate()+"/"+array_income[x].date.getMonth()+"/"+array_income[x].date.getFullYear()+"</div>\
+            <div class='col-4'>"+array_income[x].amount+"</div>\
+            </div>\
+            </div>\
+            </div>";  
+        }
+        document.getElementById('dash').innerHTML=output+s1;
+    }
+    function view_expense()
+    {
+        output="\
+        <div class=''>\
+        <div class='container mt-5'>\
+            <div class='text-center'>Expense Detail</div>'\
+            <div class='mt-5 text-center row justify-content-center'>\
+            <div class='col-4 fw-bolder'>Title</div>\
+            <div class='col-4 fw-bolder'>Date</div>\
+            <div class='col-4 fw-bolder'>Amount</div>\
+            </div>\
+            </div>\
+            </div>";
+        let s1="";
+        for(let x in array_expense)
+        {
+           s1+="\
+           <div class='' id='dash'>\
+           <div  class='container mt-5'>\
+           <div class='row text-center justify-content-center'>\
+            <div class='col-4'>"+array_expense[x].title+"</div>\
+            <div class='col-4'>"+array_expense[x].date.getDate()+"/"+array_expense[x].date.getMonth()+"/"+array_expense[x].date.getFullYear()+"</div>\
+            <div class='col-4'>"+array_expense[x].amount+"</div>\
+            </div>\
+            </div>\
+            </div>";  
+        }
+        document.getElementById('dash').innerHTML=output+s1;
+    }
+    function add_income()
+    {
+        output="\
+        <div class='dash'>\
+        <div class='container mt-5 border pb-5'>\
+        <div class='row justify-content-center'>\
+        <div class='col-8'>\
+            <div class='display-6 fw-bolder text-center mt-5'>Add Income</div>\
+            <div class='container mt-5'>\
+         <input type='date' class='form-control mt-2' placeholder='Date' id='date_in'>\
+         <input type='text' placeholder='Title' class='form-control mt-2' id='title_in'>\
+         <input type='number' id='amount_in' placeholder='Amount' class='form-control mt-2'>\
+        <div class='text-center'><button class='rounded-pill mt-4 fs-4' onclick='data_income()''>Add</button></div> \
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+          </div>";
+          document.getElementById('dash').innerHTML=output;
+    }
+    function data_income()
+    {
+        let obj={date:"",title:"",amount:""};
+        var date_income=document.getElementById('date_in');
+        var title_income=document.getElementById('title_in');
+        var amount_income=document.getElementById('amount_in');
+        obj.date=new Date(date_income.value);
+        obj.title=title_income.value;
+        obj.amount=amount_income.value;
+        array_income.push(obj);
+        date_income.value="";
+        title_income.value="";
+        amount_income.value="";
+    }
+    function data_expense()
+    {
+        let obj={date:"",title:"",amount:""};
+        var date_expense=document.getElementById('date_ex');
+        var title_expense=document.getElementById('title_ex');
+        var amount_expense=document.getElementById('amount_ex');
+        var sum=0;
+        var sum2=0;
+        for(let x in array_expense)
+        {
+            sum+=parseInt(array_expense[x].amount);
+        }
+        for(let x in array_income)
+        {
+            sum2+=parseInt(array_income[x].amount);
+        }
+        if((sum+parseInt(amount_expense.value))<=sum2)
+        {
+           obj.date=new Date(date_expense.value);
+           obj.title=title_expense.value;
+           obj.amount=amount_expense.value;
+           array_expense.push(obj);
+        }
+        else
+        {
+            alert('You have exceeded your limit');
+            add_expense();
+        }
+        date_expense.value="";
+        title_expense.value="";
+        amount_expense.value="";
+    }
+    function view_dash()
+    {
+        let date=new Date();
+        let day=date.getDate();
+        let month=date.getMonth();
+        let year=date.getFullYear();
+        var sum=0;
+        var sum2=0;
+        var today=0;
+        var week=0;
+        var previous=0;
+        for(let x in array_expense)
+        {
+          if(array_expense[x].date.getMonth()<month && array_expense[x].date.getFullYear()==year)
+          {
+            previous+=parseInt(array_expense[x].amount);
+          }
+          if(array_expense[x].date.getMonth()==month && array_expense[x].date.getFullYear()==year)
+          {
+            sum+=parseInt(array_expense[x].amount);
+          }
+          if(array_expense[x].date.getMonth()==month && array_expense[x].date.getFullYear()==year && array_expense[x].date.getDate()==day)
+          {
+            today+=parseInt(array_expense[x].amount);
+          }
+          if(array_expense[x].date.getMonth()==month && array_expense[x].date.getFullYear()==year && array_expense[x].date.getDate()>=(day-7))
+          {
+            week+=parseInt(array_expense[x].amount);
+          }
+        }
+        let c="";
+        var per=0;
+        if(sum>=previous)
+        {
+            c="↑";
+            if(previous!=0)
+            {
+               per=(((sum-previous)*100)/previous);
+            }
+            else
+            {
+                per=100;
+            }
+
+        }
+        else
+        {
+            c="↓";
+            if(sum!=0)
+            {
+              per=(((previous-sum)*100)/previous);
+            }
+            else
+            {
+                per=100;
+            }
+        }
+        for(let x in array_income)
+        {
+
+          if(array_income[x].date.getMonth()==month && array_income[x].date.getFullYear()==year)
+          {
+            sum2+=parseInt(array_income[x].amount);
+          }
+
+        }
+       
+        var saving=sum2-sum;
+    
+
+        output="\
+        <div class='row justify-content-center'>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Today Expense</div>\
+                <div class='text-center' id='t_ex'>Rs: "+today+"</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Last Week Expense</div>\
+                <div class='text-center' id='w_ex'>Rs: "+week+"</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Last Month Expense</div>\
+                <div class='text-center' id='m_ex'>Rs: "+sum+"</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Last Month Income</div>\
+                <div class='text-center' id='m_in'>Rs: "+sum2+"</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>This Month Income Saving</div>\
+                <div class='text-center' id='s_in'>Rs: "+saving+"</div>\
+            </div>\
+            <div class='col-5 mt-2 py-5 border'>\
+                <div class='text-center'>Percent Chart</div>\
+                <div class='text-center' id=''>"+per+"%"+c+"</div>\
+            </div>\
+        </div>\
+        ";
+        document.getElementById('dash').innerHTML=output;
+
+    }
+    function add_expense()
+    {
+        output="\
+        <div class='container mt-5 border pb-5'>\
+        <div class='row justify-content-center'>\
+        <div class='col-8'>\
+            <div class='display-6 fw-bolder text-center mt-5'>Add Expense</div>\
+            <div class='container mt-5'>\
+         <input type='date' class='form-control mt-2' placeholder='Date' id='date_ex'>\
+         <input type='text' placeholder='Title' class='form-control mt-2' id='title_ex'>\
+         <input type='number' id='amount_ex' placeholder='Amount' class='form-control mt-2'>\
+        <div class='text-center'><button class='rounded-pill mt-4 fs-4'  onclick='data_expense()''>Add</button></div> \
+        </div>\
+        </div>\
+        </div>\
+          </div>";
+          document.getElementById('dash').innerHTML=output;
+    }
+  </script>   
+</body>
+</html>

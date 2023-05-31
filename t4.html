@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="row mt-5 justify-content-center">
+        <div class="col-3">
+            <div class="row justify-content-center">
+                <div id="screen" class="fs-2 col-11 bg-success border rounded-3 text-end"></div>
+              <div class="col-3">
+                <div class="fs-2 border rounded-3 text-center bg-transparent text-danger    para">AC</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_clear()" class="fs-2 border bg-transparent rounded-3 text-center text-danger  para">cl</div>
+            </div>
+            <div class="col-3">
+                <div class="fs-2 border bg-transparent rounded-3 text-center text-danger  para">%</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_calculate(this)" class="fs-2 border bg-transparent rounded-3 text-center text-danger  para">÷</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)" class="fs-2 border bg-transparent rounded-3 text-center text-  para">7</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center text-  para">8</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center text-  para">9</div>
+            </div>
+            <div class="col-3">
+                <div value="x" onclick="_calculate(this)" class="fs-2 border bg-transparent rounded-3 text-center  para">x</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center  para">4</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center  para">5</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center  para">6</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_calculate(this)" class="fs-2 border bg-transparent rounded-3 text-center  para">-</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center  para">1</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center  para">2</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)"  class="fs-2 border bg-transparent rounded-3 text-center  para">3</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_calculate(this)" class="fs-2 border bg-transparent rounded-3 text-center  para">+</div>
+            </div>
+            <div class="col-3">
+                <div class="fs-2 border bg-transparent rounded-3 text-center  para">
+                    sd
+                </div>
+            </div>
+            <div class="col-3">
+                <div value="0" onclick="_displayvalue(this)" class="fs-2 border bg-transparent rounded-3 text-center  para">0</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_displayvalue(this)" class="fs-2 border bg-transparent rounded-3 text-center  para">.</div>
+            </div>
+            <div class="col-3">
+                <div onclick="_equal()" class="fs-2 border bg-transparent rounded-3 text-center  para">=</div>
+            </div>
+            </div>
+    
+        </div>
+    </div>
+    <script>
+         for(var i=0;i<20;i++)
+         {
+            document.getElementsByClassName('para')[i].style.backgroundColor="green";
+            document.getElementsByClassName('para')[i].style.height="50px";
+        }
+         var s=document.getElementById('screen');
+         s.style.height="50px";
+         var g1=document.getElementsByClassName('para')[0];
+         var g2=document.getElementsByClassName('para')[1];
+         var g3=document.getElementsByClassName('para')[2];
+         var g4=document.getElementsByClassName('para')[3];
+         var g5=document.getElementsByClassName('para')[4];
+         var g6=document.getElementsByClassName('para')[5];
+         var g7=document.getElementsByClassName('para')[6];
+         var g8=document.getElementsByClassName('para')[7];
+         var g9=document.getElementsByClassName('para')[8];
+         var g10=document.getElementsByClassName('para')[9];
+         var g11=document.getElementsByClassName('para')[10];
+         var g12=document.getElementsByClassName('para')[11];
+         var g13=document.getElementsByClassName('para')[12];
+         var g14=document.getElementsByClassName('para')[13];
+         var g15=document.getElementsByClassName('para')[14];
+         var g16=document.getElementsByClassName('para')[15];
+         var g17=document.getElementsByClassName('para')[16];
+         var g18=document.getElementsByClassName('para')[17];
+         var g19=document.getElementsByClassName('para')[18];
+         var g20=document.getElementsByClassName('para')[19];
+         g1.addEventListener("click",function()
+         {
+           s.innerHTML="";
+         })
+         var c=0;
+         function _displayvalue(b)
+         {
+            if(s.innerHTML.length<=12)
+            {
+            
+            if(b.innerHTML==".")
+            {
+                c++;
+                if(c==1)
+                {
+                    s.innerHTML+=b.innerHTML;
+                }
+            }
+            else
+              s.innerHTML+=b.innerHTML;
+            }
+        }
+        var previous;
+        var op;
+        function _clear()
+        {
+            let array=s.innerHTML;
+            s.innerHTML=array.substring(0,array.length-1);
+        }
+        function _calculate(a)
+        {
+            previous=parseInt(s.innerHTML);
+            op=a.innerHTML;
+            s.innerHTML="";
+         }
+         function _equal()
+        {
+            var result;
+            var next=parseInt(s.innerHTML);
+            if(op=="x")
+                result=previous*next;
+            else if(op=="+")
+                result=previous+next;
+            else if(op=="-")
+                result=previous-next;
+            else
+                result=previous/next;
+
+            if(result<=9999999999999999)
+                s.innerHTML=result;
+            else
+               s.innerHTML="Bound exceeded";
+        }
+    </script>
+</body>
+</html>

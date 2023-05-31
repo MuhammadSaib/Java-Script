@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="row container-fluid mt-5">
+        <div class="col-4">
+            <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              DashBoard
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="container border">
+                    <div class="col-4">
+                   <input type="radio" class="" name="m" onclick="basic_info()" id="basic-info">
+                   <label for="basic-info" name="basic-info" class="h5" >Basic Info</label>
+                </div>
+                   <div class="col-4"><i class="text-danger para">(*required)</i></div>
+                   <button class="col-12 btn btn-link btn-lg text-end" onclick="edit1()">Edit</button>
+                </div>
+                <div class="container  border mt-3">
+               
+                        <div class="col-6">
+                       <input type="radio" class="" name="m" onclick="business_info()" id="business-info">
+                       <label for="business-info" name="business-info" class="h5" >Business Info</label>
+                    </div>
+                       <div class="col-4"><i class="text-danger para">(*required)</i></div>
+                       <button class="col-12 btn btn-link btn-lg text-end" onclick="edit2()">Edit</button>
+                    </div>
+                
+                <div class="container border mt-3">
+                    <div class="col-6">
+                        <input type="radio" class="" id="find-us" name="m" onclick="find_us()">
+                        <label for="find-us" name="find-us" class="h5" >Find Us</label>
+                     </div>
+                        <div class="col-4"><i class="text-danger para">(*required)</i></div>
+                        <button class="col-12 btn btn-link btn-lg text-end" onclick="edit3()">Edit</button>
+             </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-8">
+
+        <div class="container bg-secondary rounded-3 shadow-lg">
+          <div class="container row py-3">
+         <div class="col-6"><div class="text-start h2 mt-1">Basic Info</div><span><i class="text-danger">(*required)</i></span></div>
+          <div class="col-6 text-end fs-5 mt-1"><button onclick="confirm()">Confirm</button><button>Next</button></div>
+          </div>
+        </div>
+        <div id="show"></div>
+         
+      </div>
+    </div>
+
+    <script>
+        let array_basic=[];
+        let array=[];
+        let array2=[];
+        let array3=[];
+        let count=1;
+       function basic_info()
+       { 
+     
+            
+           let output="";
+           output="\
+           <div class='container mt-5'>\
+            <div class='col-12 h2'>Give your Basic_info</div>\
+            <input class='col-12 form-control mt-4' type='text' id='name' placeholder='Business Name'>\
+            <input class='col-12 form-control mt-4' type='text' id='email' placeholder='Contact Email'>\
+            <textarea class='col-12 form-control mt-4' name='' id='comments' cols='30' rows='10' placeholder='Comments'></textarea>\
+            </div>";
+            document.getElementById('show').innerHTML=output;
+        
+        }
+        function business_info()
+        {
+          
+            let output="";
+            output="\
+            <div class='container'>\
+                <div class='h3 mt-5'>Retail Model</div>\
+                <div class='col-12'>\
+                <input type='radio' name='b' id='b1' value='E-commerce, Online Only'>\
+                <label for='b1'  class='fs-5' >E-commerce, Online Only</label>\
+                </div>\
+                <div class='col-12'>\
+                <input type='radio' name='b' id='b2' value='Retail, In-Store Only - No E-commerce'>\
+                <label for='b2' class='fs-5' >Retail, In-Store Only - No E-commerce</label>\
+            </div>\
+            <div class='col-12'>\
+                <input type='radio' name='b' id='b3' value='Retail, both Online & In-Store</label'>\
+                <label for='b3' class='fs-5' >Retail, both Online & In-Store</label>\
+            </div>\
+            <div class='col-12'>\
+                <input type='radio' name='b'  id='b4' value='Service with a store-front'>\
+                <label for='b4'  class='fs-5' >Service with a store-front</label>\
+            </div>\
+            <div class='col-12'>\
+                <input type='radio' name='b' id='b5' value='Service without a store-front'>\
+                <label for='b5' class='fs-5'>Service without a store-front</label\
+            </div>\
+            <div class='h3 mt-5'>Types of Business</div>\
+                <div class='col-12'>\
+                <input type='radio' name='c' value='Services'  id='c1'>\
+                <label for='c1' class='fs-5' >Services</label>\
+                </div>\
+                <div class='col-12'>\
+                <input type='radio' name='c' value='Brand' id='c2'>\
+                <label for='c2' class='fs-5' >Brand</label>\
+            </div>\
+            <div class='col-12'>\
+                <input type='radio' name='c' value='100% Eco-Marketplace' id='c3'>\
+                <label for='c3' class='fs-5'>100% Eco-Marketplace </label>\
+            </div>\
+            <div class='col-12'>\
+                <input type='radio' name='c' value='Partial Eco-Marketplace' id='c4'>\
+                <label for='c4'  class='fs-5'>Partial Eco-Marketplace</label>\
+            </div>\
+            <div class='col-12'>\
+                <input type='radio' name='c' value='Reseller' id='c5'>\
+                <label for='c5'  class='fs-5' >Reseller</label>\
+            </div>\
+             <div class='h4 mt-5'>Launch-Year</div>\
+               <input type='number' id='launch-year' class='form-control' placeholder='2023'>\
+            </div>";
+            document.getElementById('show').innerHTML=output;
+        
+        }
+        function find_us()
+        {
+       
+            let output="";
+            output="\
+            <div class='container'>\
+            <div class='text-center h4 mt-5'>Let users know where they can find your products online.</div>\
+            <div id='more'>\
+            <div class='row mt-3 justify-content-center'>\
+            <div class='col-6'><input type='text' class='form-control' id='business-name' placeholder='Business Name'></div>\
+             <div class='col-6'><input type='text' class='form-control' id='http' placeholder='https//''></div>\
+            </div>\
+             </div>\
+             <div class='col-12 text-end mt-3'><button onclick='plus(this)' class='rounded-pill h5'>+</button></div>\
+           </div>";
+           document.getElementById('show').innerHTML=output;
+        
+        }
+        function plus(b)
+        {
+            
+        if(count<=3)
+        {
+            
+            let obj={one:"",two:""};
+            let plus="\
+            <div class='row mt-3 justify-content-center'>\
+            <div class='col-6'><input type='text' class='form-control' id='bn2' placeholder='Business Name'></div>\
+             <div class='col-6'><input type='text' class='form-control' id='ht2' placeholder='https//''></div>\
+            </div>";
+            document.getElementById('more').innerHTML+=plus;
+            array3.push(obj);
+            
+
+           
+        }
+        count++;
+        }
+        function confirm()
+        {
+            if(document.getElementById('basic-info').checked)
+            {
+             
+
+                let a=document.getElementById('name');
+                let b=document.getElementById('email');
+                let c=document.getElementById('comments');
+                if(a.value!="" && b.value!="" && c.value!="")
+                {
+                document.getElementsByClassName('para')[0].innerHTML='(saved)';
+                let obj={name:a.value,
+                         email:b.value,
+                         comments:c.value};
+                a.value="";
+                b.value="";
+                c.value="";
+                array[0]=obj;
+                console.log(array);
+                }
+                else
+                {
+                    alert('plz fill all the fields');
+                    a.value="";
+                    b.value="";
+                    c.value="";
+                }
+            }
+            else if(document.getElementById('business-info').checked)
+            {
+                var one;
+                var two;
+                var flag=false;
+                var flag2=false;
+                let obj={retailmodel:"",
+                        type:"",
+                        year:""};
+                let RadioButtons=document.getElementsByName('b');
+                for(x of RadioButtons)
+                {
+                   if(x.checked)
+                   {
+                     flag=true;
+                     obj.retailmodel=x.value;
+                     one=x;
+                     break;
+                   }
+                }
+                RadioButtons=document.getElementsByName('c');
+                for(x of RadioButtons)
+                {
+                   if(x.checked)
+                   {
+                    flag2=true;
+                     obj.type=x.value;
+                     two=x;
+                     break;
+                   }
+                }
+                let c=document.getElementById('launch-year');
+                if(c.value!="" && flag && flag2)
+                {
+                    document.getElementsByClassName('para')[1].innerHTML='(saved)';
+                obj.year=c.value;
+                c.value="";
+                array2[0]=obj;
+                console.log(array2);
+                one.checked=false;
+                two.checked=false;
+             
+                }
+                else{
+                    alert('plz fill all the fields');
+                }
+            }
+            else
+            {
+                document.getElementsByClassName('para')[2].innerHTML='(saved)';
+
+            }
+            
+
+
+        }
+        function edit1()
+        {
+                basic_info();
+          
+                document.getElementById('basic-info').checked=true;
+                let a=document.getElementById('name');
+                let b=document.getElementById('email');
+                let c=document.getElementById('comments');
+                a.value=array[0].name;
+                b.value=array[0].email;
+                c.value=array[0].comments;
+        }
+        function edit2()
+        {
+                business_info();
+                document.getElementById('business-info').checked=true;
+         
+                let RadioButtons=document.getElementsByName('b');
+                for(x of RadioButtons)
+                {
+                   if(x.value==array2[0].retailmodel)
+                   {
+                      x.checked=true;
+                      break;
+                   }
+                }
+                RadioButtons=document.getElementsByName('c');
+                for(x of RadioButtons)
+                {
+                   if(x.value==array2[0].type)
+                   {
+                     x.checked=true;
+                     break;
+                    
+                   }
+                }
+                let c=document.getElementById('launch-year');
+                c.value=array2[0].year;
+        }
+        function edit3()
+        {
+            find_us();
+            
+        }
+
+        
+
+    </script>
+</body>
+</html>

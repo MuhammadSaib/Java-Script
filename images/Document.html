@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://127.0.0.1:5500/buy.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Document_files/web.css">
+    <link rel="stylesheet" href="./Document_files/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Document_files/font-awesome.min.css">
+    <script src="./Document_files/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- accordian start -->
+    <div class="row mt-5">
+      <div class="col-3">
+        
+      <form action="http://127.0.0.1:5500/buy.php" method="post">
+       <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+             Search By Keyboard
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="row justify-content-center">
+                    <input type="text" class="col-9" id="i1" name="searchByKeyword" placeholder="e.g Honda in Lahore">
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              City 
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <div class="col-4">
+                <input type="checkbox" id="c1" name="city" value="Karachi">
+                <label for="1">Karachi</label><br>
+                <input type="checkbox" id="c2" name="city" value="Lahore">
+                <label for="2">Lahore</label><br>
+                <input type="checkbox" id="c3" name="city" value="Islamabad">
+                <label for="3">Islamabad</label><br>
+                <input type="checkbox" id="c4" name="city" value="Rawalpindi">
+                <label for="4"> Rawalpindi</label><br>
+                <input type="checkbox" id="c5" name="city" value="Peshawar">
+                <label for="5">Peshawar</label><br>
+              </div>
+            </div>
+          </div>
+         </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              Price Range
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseFour">
+            <div class="accordion-body">
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <div class="row">
+                  <!-- <form action="buy.php" method="POST"> -->
+                    <select name="price_range_from_" id="price_range_from" class="col-4">
+                      <option value="">From</option>
+                      <option value="500000">500,000</option>
+                      <option value="1000000">100,0000</option>
+                      <option value="2000000">200,0000</option>
+                      <option value="3000000">300,0000</option>
+                      <option value="4000000">400,0000</option>
+                      <option value="5000000">500,0000</option>
+                      <option value="0">0</option>
+                    </select>
+                    <select name="price_range_to_" id="price_range_to" class="col-4">
+                      <option value="">To</option>
+                      <option value="500000">500,000</option>
+                      <option value="1000000">100,0000</option>
+                      <option value="2000000">200,0000</option>
+                      <option value="3000000">300,0000</option>
+                      <option value="4000000">400,0000</option>
+                      <option value="5000000">500,0000</option>
+                      <option value="0">0</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                Year
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseFive">
+              <div class="accordion-body">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <div class="row">
+                       <select name="year_from_" id="year_from" class="col-4">
+                        <option value="">From</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                       </select>
+                       <select name="year_to_" id="year_to" class="col-4">
+                        <option value="">To</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                       </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                Color
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseSix">
+              <div class="accordion-body">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <input type="checkbox" id="cl1" name="Color" value="Black">
+                    <label for="1">Black</label><br>
+                    <input type="checkbox" id="cl2" name="Color" value="Red">
+                    <label for="2">Red</label><br>
+                    <input type="checkbox" id="cl3" name="Color" value="Green">
+                    <label for="3">Green</label><br>
+                    <input type="checkbox" id="cl4" name="Color" value="Silver">
+                    <label for="4"> Silver</label><br>
+                    <input type="checkbox" id="cl5" name="Color" value="Orange">
+                    <label for="5">Orange</label><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="col-3" id="b4">GET</button>
+        
+      </div></form>
+    </div>
+    
+    <div class="col-8 container">
+        <div class="row">
+          <div class="row border">
+              <img src="./Document_files/carr.avif" class="m-0 p-0 col-2 img-fluid" alt="">
+              <div class="col-8">
+                  <div class="fs-4 pk fw-bold" id="buy">Honda 2018 for sale</div>
+                  <div class="fs-6" id="buy2">Islamabad2018   |  Petrol  |    1700    |Automatic
+</div>
+              </div>
+              
+          </div>
+          </div>
+     </div>
+     <script>
+        let v="Honda";
+        let m="2018";
+        let w="for sale";
+        let c="Islamabad";
+        let output="";
+        output=v+" "+m+" "+w;
+        var show=document.getElementById('buy');
+        show.textContent=output;
+        var show2=document.getElementById('buy2');
+        show2.innerHTML=c;
+        var fueltype="Petrol";
+        var transmission="Automatic";
+        var enginecc=1700;
+        let output2="";
+        output2=m+"   "+"|"+"  "+fueltype+"  "+"|"+"    "+enginecc+"    "+"|"+transmission+"\n";
+        show2.innerHTML+=output2;
+        
+
+
+     </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</div></body></html>

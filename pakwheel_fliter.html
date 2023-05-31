@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Button trigger modal -->
+      <div class="container">
+         <button type="button" class="mt-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+         Post an Add
+       </button>
+    </div>
+       <!-- Modal -->
+       <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" style="max-width: 80%;">
+       <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row container">
+                <div class="col-xl-4 mt-2">
+            <div class="h5">Provinces</div>
+            <select name="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="Punjab" class="">Punjab</option>
+                <option value="Sindh" class="">Sindh</option>
+                <option value="Baluchistan" class="">Baluchistan</option>
+                <option value="KPK" class="">KPK</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">City</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Quetta">Quetta</option>
+                <option value="Peshawar">Peshawar</option>
+            </select>   
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">Make</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="Audi">Audi</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Honda">Honda</option>
+                <option value="BAIC">BAIC</option>
+                <option value="Bentley">Bentley</option>
+                <option value="BMW">BMW</option>
+                <option value="Bugatti">Bugatti</option>
+                <option value="Changan">Changan</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Haval">Haval</option>
+                <option value="Isuzu">Isuzu</option>
+                <option value="Lamborghini">Lamborghini</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">Registered In</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">Body Color</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="Red">Red</option>
+                <option value="Orange">Orange</option>
+                <option value="Grey">Grey</option>
+                <option value="Black">Black</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">KMs Driven</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="50000">50,000</option>
+                <option value="40000">40,000</option>
+                <option value="30000">30,000</option>
+                <option value="10000">10,000</option>
+                <option value="9000">9,000</option>
+                <option value="0">0</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">Price(PKR)</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="500000">500,000</option>
+                <option value="1000000">100,0000</option>
+                <option value="2000000">200,0000</option>
+                <option value="3000000">300,0000</option>
+                <option value="4000000">400,0000</option>
+                <option value="5000000">500,0000</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">Model Year</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">Engine-Capacity</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="2000">2000</option>
+                <option value="3000">3000</option>
+                <option value="1500">1500</option>
+                <option value="2500">2500</option>
+                <option value="1000">1000</option>
+                <option value="760">760</option>
+            </select>
+        </div>
+        <div class="col-xl-4 mt-2">
+            <div class="h5">Transmission</div>
+            <select name="" id="" class="para form-control">
+                <option value="" class="">Select</option>
+                <option value="Manual">Manual</option>
+                <option value="Auto">Auto</option>
+            </select>
+        </div>
+        <div class="col-xl-8 mt-2 pb-5">
+            <div class="h5">Upload-image</div>
+            <input type="file" class="para form-control" id="image">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button onclick="post()" type="button" class="btn btn-primary">Post</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- accordian start -->
+    <div class="row mt-5">
+      <div class="col-3">
+        
+       <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+             Search By Keyboard
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="row justify-content-center">
+                    <input type="text" class="col-9" id="i1" name="searchByKeyword" placeholder="e.g Honda in Lahore">
+                    <button onclick="search_by_keyword()" class="col-3" id="b1">Go</button>
+                    </div>
+                </div>
+            </div>
+               
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" onclick="acc_city()">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              City 
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <div class="col-4">
+                <input type="checkbox" id="c1" name="city" value="Karachi">
+                <label for="1">Karachi</label><br>
+                <input type="checkbox" id="c2" name="city" value="Lahore">
+                <label for="2">Lahore</label><br>
+                <input type="checkbox" id="c3" name="city" value="Islamabad">
+                <label for="3">Islamabad</label><br>
+                <input type="checkbox" id="c4" name="city" value="Rawalpindi">
+                <label for="4"> Rawalpindi</label><br>
+                <input type="checkbox" id="c5" name="city" value="Peshawar">
+                <label for="5">Peshawar</label><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" onclick="acc_province()">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Provinces
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseThree">
+            <div class="accordion-body">
+                <input type="checkbox" id="p1" name="provinces" value="Punjab">
+                <label for="p-1">Punjab</label><br>
+                <input type="checkbox" id="p2" name="provinces" value="Sindh">
+                <label for="p-2">Sindh</label><br>
+                <input type="checkbox" id="p3" name="provinces" value="Baluchistan">
+                <label for="p-3">Baluchistan</label><br>
+                <input type="checkbox" id="p4" name="provinces" value="KPK">
+                <label for="p-4">KPK</label><br>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                Price Range
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseFour">
+              <div class="accordion-body">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <div class="row">
+                       <select name="price_range_from_" id="price_range_from" class="col-4">
+                        <option value="">From</option>
+                        <option value="500000">500,000</option>
+                        <option value="1000000">100,0000</option>
+                        <option value="2000000">200,0000</option>
+                        <option value="3000000">300,0000</option>
+                        <option value="4000000">400,0000</option>
+                        <option value="5000000">500,0000</option>
+                        <option value="0">0</option>
+                       </select>
+                       <select name="price_range_to_" id="price_range_to" class="col-4">
+                        <option value="">To</option>
+                        <option value="500000">500,000</option>
+                        <option value="1000000">100,0000</option>
+                        <option value="2000000">200,0000</option>
+                        <option value="3000000">300,0000</option>
+                        <option value="4000000">400,0000</option>
+                        <option value="5000000">500,0000</option>
+                        <option value="0">0</option>
+                       </select>
+                         <button class="col-3" id="b2" onclick="acc_price()">Go</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                Year
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseFive">
+              <div class="accordion-body">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <div class="row">
+                       <select name="year_from_" id="year_from" class="col-4">
+                        <option value="">From</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                       </select>
+                       <select name="year_to_" id="year_to" class="col-4">
+                        <option value="">To</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                       </select>
+                         <button class="col-3" id="b3" onclick="acc_year()">Go</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                Mialege
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseSix">
+              <div class="accordion-body">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <div class="row">
+                       <select name="mialege_from_" id="mialege_from" class="col-4">
+                        <option value="">From</option>
+                        <option value="0">0</option>
+                        <option value="10000">10000</option>
+                        <option value="20000">20000</option>
+                        <option value="30000">30000</option>
+                        <option value="40000">40000</option>
+                        <option value="50000">50000</option>
+                        <option value="60000">60000</option>
+                        <option value="70000">70000</option>
+                        <option value="80000">80000</option>
+                        <option value="90000">90000</option>
+                        <option value="100000">100000</option>
+                       
+                       </select>
+                       <select name="mialege_to_" id="mialege_to" class="col-4">
+                        <option value="">From</option>
+                        <option value="0">0</option>
+                        <option value="10000">10000</option>
+                        <option value="20000">20000</option>
+                        <option value="30000">30000</option>
+                        <option value="40000">40000</option>
+                        <option value="50000">50000</option>
+                        <option value="60000">60000</option>
+                        <option value="70000">70000</option>
+                        <option value="80000">80000</option>
+                        <option value="90000">90000</option>
+                        <option value="100000">100000</option>
+                       
+                       </select>
+                         <button class="col-3" id="b4" onclick="acc_kms()">Go</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+       
+    </div>
+    
+     <div class="col-8 container" id="result">
+    </div>
+  </div>
+    
+<script>
+  let array=[];
+  let temp=[];
+  let output="";
+  let h=0;
+ 
+  function acc_city()
+  {
+    let c=false;
+    output="";
+    temp.sort(function(a,b)
+    {
+      return b.city-a.city;
+    })
+    var checkboxes = document.getElementsByName("city");
+   
+    for (var i = 0; i < checkboxes.length; i++)
+     { 
+        if (checkboxes[i].checked) 
+        {
+          c=true;
+          for(let x in array)
+          {    
+             if(array[x].city==checkboxes[i].value)
+             {
+               display_res(x);
+                   
+             }
+           }
+        }
+    } 
+    if(c==true)
+    {
+       document.getElementById('result').innerHTML=output;
+    }
+  }
+   
+  function acc_province()
+  {
+    let c=false;
+    temp=array;
+    temp.sort(function(a,b)
+    {
+      return b.province-a.province;
+    })
+    output="";
+    var checkboxes = document.getElementsByName("provinces");
+   
+    for (var i = 0; i < checkboxes.length; i++)
+     { 
+        if (checkboxes[i].checked) 
+        {
+          c=true;
+          for(let x in array)
+          {    
+             if(array[x].province==checkboxes[i].value)
+             {
+               display_res(x);
+                   
+             }
+           }
+        }
+    } 
+    if(c==true)
+    {
+       document.getElementById('result').innerHTML=output;
+    }
+    
+  }
+
+  function post()
+  {
+    document.getElementById('result').innerHTML="";
+    output="";
+    let obj={province:"",city:"",make:"",reg:"",color:"",kms:"",price:"",my:"",CC:"",transmission:"",image:""};
+    var province=document.getElementsByClassName('para')[0];
+    var city=document.getElementsByClassName('para')[1];
+    var make=document.getElementsByClassName('para')[2];
+    var reg=document.getElementsByClassName('para')[3];
+    var color=document.getElementsByClassName('para')[4];
+    var kms=document.getElementsByClassName('para')[5];
+    var price=document.getElementsByClassName('para')[6];
+    var year=document.getElementsByClassName('para')[7];
+    var cc=document.getElementsByClassName('para')[8];
+    var transmission=document.getElementsByClassName('para')[9];
+    var img=document.getElementsByClassName('para')[10];
+    obj.province=province.value;
+    obj.city=city.value;
+    obj.make=make.value;
+    obj.reg=reg.value;
+    obj.color=color.value;
+    obj.kms=kms.value;
+    obj.price=price.value;
+    obj.my=year.value;
+    obj.CC=cc.value;
+    obj.transmission=transmission.value;
+    obj.image=img.files[0];
+    let reader=new FileReader();
+    reader.onload=function()
+    {
+      obj.image=reader.result;
+    };
+    reader.readAsDataURL(obj.image);
+    setTimeout(function()
+    {
+      array.push(obj);
+      temp=array;
+      for(let x in temp)
+       {
+          display_res(x);
+       }
+       document.getElementById('result').innerHTML=output;
+
+    },20);
+
+   
+    
+  }
+  function search_by_keyword()
+  { 
+    var check=document.getElementById('i1');
+    let string="";
+    string=check.value;
+    output="";
+    
+    for(let x in array)
+    {
+
+      // if(array[x].make==check.value)
+      // {
+      //    display_res(x);
+      // }
+      
+         if(array[x].make.includes(string))
+         {
+            display_res(x);
+          }
+   
+
+      
+      
+    }
+    document.getElementById('result').innerHTML=output;
+   
+  }
+ 
+   function acc_price()
+   {
+    let c=false;
+    temp=array;
+    temp.sort(function(a,b)
+    {
+      return b.price-a.price;
+    })
+     output="";
+     var a=document.getElementById('price_range_from');
+     var b=document.getElementById('price_range_to');
+     for(let x in temp)
+     {
+
+      c=true;
+       if(parseInt(temp[x].price)>=parseInt(a.value) && parseInt(temp[x].price)<=parseInt(b.value))
+       {
+     
+        display_res(x);
+       }
+     } 
+     if(c==true)
+     {
+         document.getElementById('result').innerHTML=output;
+     }
+
+   }
+   function acc_year()
+   {
+    let c=false;
+    temp=array;
+    temp.sort(function(a,b)
+    {
+      return b.my-a.my;
+    })
+     output="";
+     var a=document.getElementById('year_from');
+     var b=document.getElementById('year_to');
+     for(let x in temp)
+     {
+      c=true;
+       if(parseInt(temp[x].my)>=parseInt(a.value) && parseInt(temp[x].my)<=parseInt(b.value))
+       {  
+         
+          display_res(x);
+       }
+     } 
+     if(c==true)
+     {
+      document.getElementById('result').innerHTML=output;
+     }
+   
+
+   }
+   function acc_kms()
+   {
+    let c=false;
+    temp=array;
+    temp.sort(function(a,b)
+    {
+      return b.kms-a.kms;
+    })
+     output="";
+     var a=document.getElementById('mialege_from');
+     var b=document.getElementById('mialege_to');
+     for(let x in temp)
+     {
+      c=true;
+       if(parseInt(temp[x].kms)>=parseInt(a.value) && parseInt(temp[x].kms)<=parseInt(b.value))
+       {
+        
+          display_res(x);
+       }
+     } 
+     if(c==true)
+     {
+        document.getElementById('result').innerHTML=output;
+     }
+
+   }
+  function display_res(x)
+  {
+        output+="\
+                    <div class='border mt-4 rounded-3 shadow-lg row justify-content-center border pb-4' style='background-color:grey; color:black;'>\
+                    <div class='col-2'><img class='img-fluid' src='"+temp[x].image+"'></div>\
+                    <div class='col-7'>\
+                    <div class='mt-3 fw-bold fs-5'>"+temp[x].make+" "+temp[x].my+" for sale</div>\
+                    <div class='mt-3 fs-5'>"+temp[x].province+" | "+temp[x].city+"</div>\
+                    <div class='mt-3  fs-5'>"+temp[x].my+" | "+temp[x].kms+" kms | "+temp[x].CC+" cc | "+temp[x].transmission+"</div>\
+                    </div>\
+                    <div class='col-3 fw-bold mt-3'>PKR: "+temp[x].price+"</div>\
+                    </div>\
+                    ";
+  }
+   
+
+  
+
+
+</script>
+
+    
+
+    
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="first" placeholder="enter 1st no">
+    <input type="text" id="second"  placeholder="enter 2nd no">
+    <button id="b1">Even</button>
+    <button id="b2">odd</button>
+    <div id="ans"></div>
+</body>
+<script>
+    var a=document.getElementById("first");
+    var b=document.getElementById("second");
+    var even=document.getElementById("b1");
+    var odd=document.getElementById("b2");
+    even.addEventListener("click",function(){
+        for(var i=a.value;i<=b.value;i++)
+        {
+            if(i%2==0)
+            {
+               document.getElementById('ans').innerHTML+="this is even: " + i +"<br>";
+            }
+    
+        }
+    })
+    odd.addEventListener("click",function(){
+        for(var i=a.value;i<=b.value;i++)
+        {
+           if(i%2!=0)
+           { 
+               document.getElementById('ans').innerHTML+="this is odd: " + i +"<br>";
+           }
+        }
+    })
+   
+
+
+</script>
+</html>

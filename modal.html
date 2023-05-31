@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+</html>
+<body>
+    <button onclick="proceedfunction(this)" class="fs-4 mt-3" data-bs-toggle="modal" data-bs-target="#proceedModal" id="proceed"> Proceed </button>
+   <!-- Second Modal -->
+   <style>
+    .modal-dialog {
+      max-width: 80% !important;
+      max-height: 80% !important;
+      margin: 1.75rem auto;
+    }
+  </style>
+  
+  <div class="modal fade" id="proceedModal" tabindex="-1" aria-labelledby="proceedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="proceedModalLabel">INVOICE</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="title" class="h2 text-center">Customer's Invoice</div>
+          <div id="namee" class="h4 text-center mt-5"></div>
+          <div id="phone" class="h4 text-center"></div>
+          <div class="container mt-5">         
+             <div class="row h5 mt-5 justify-content-center">
+            <div class="col-2 headings"></div>
+            <div class="col-2 headings"></div>
+            <div class="col-2 headings"></div>
+            <div class="col-1 headings"></div>
+            <div class="col-1 headings"></div>
+            <div class="col-1 headings"></div>
+            <div class="col-1 headings"></div>
+            <div class="col-2 headings"></div>
+         </div>
+         <div class="row justify-content-center">
+            <div class="col-2 d"></div>
+            <div class="col-2 d"></div>
+            <div class="col-2 d"></div>
+            <div class="col-1 d"></div>
+            <div class="col-1 d"></div>
+            <div class="col-1 d"></div>
+            <div class="col-1 d"></div>
+            <div class="col-2 d"></div>
+         </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+            <div class="col-3 fw-bolder" id="gross"></div>
+            <div class="col-3" id="value"></div>
+            </div>
+        </div>
+
+        </div>
+        <div class="modal-footer">
+          <button onclick="show()" type="button" id="print" class="btn btn-primary" data-bs-dismiss="modal">Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('title').innerHTML="Customer's Invoice";
+    document.getElementById('namee').innerHTML="Saib";
+    document.getElementById('phone').innerHTML="03234917846";
+    // let output="";
+    // output="Seller Name &nbsp;&nbsp;&nbsp;&nbsp;"+"Seller Phone &nbsp;&nbsp;&nbsp;&nbsp;"+" "+" Registration No &nbsp;&nbsp;&nbsp;&nbsp;"+" "+" Price &nbsp;&nbsp;&nbsp;&nbsp;"+" "+" Color &nbsp;&nbsp;&nbsp;&nbsp; "+" "+" Brand &nbsp;&nbsp;&nbsp;&nbsp;"+" "+" Engine Capacity&nbsp;&nbsp;&nbsp;&nbsp; "+" "+" Model Year &nbsp;&nbsp;&nbsp;&nbsp;";
+    // document.getElementById('headings').innerHTML=output;
+    document.getElementsByClassName('headings')[0].innerHTML="Seller Name";
+    document.getElementsByClassName('headings')[1].innerHTML="Seller Phone";
+    document.getElementsByClassName('headings')[2].innerHTML="Registration No";
+    document.getElementsByClassName('headings')[3].innerHTML="Model Year";
+    document.getElementsByClassName('headings')[4].innerHTML="Color";
+    document.getElementsByClassName('headings')[5].innerHTML="Brand";
+    document.getElementsByClassName('headings')[6].innerHTML="Engine Capacity";
+    document.getElementsByClassName('headings')[7].innerHTML="Amount";
+   var sum=0;
+    for(var i=0;i<9;i++)
+    {
+        let f="5000000";
+        document.getElementsByClassName('d')[0].innerHTML+="Seller Name"+"<br>";
+        document.getElementsByClassName('d')[1].innerHTML+="Seller Phone"+"<br>";
+        document.getElementsByClassName('d')[2].innerHTML+="Registration No"+"<br>";
+        document.getElementsByClassName('d')[3].innerHTML+="2018"+"<br>";
+        document.getElementsByClassName('d')[4].innerHTML+="Color"+"<br>";
+        document.getElementsByClassName('d')[5].innerHTML+="Brand"+"<br>";
+        document.getElementsByClassName('d')[6].innerHTML+="1880cc"+"<br>";
+        document.getElementsByClassName('d')[7].innerHTML+=f+"<br>";
+        sum=sum+Number(f);
+    }
+    document.getElementsByClassName('d')[6].innerHTML+="<br>"+"<b>"+"Total";
+    document.getElementsByClassName('d')[7].innerHTML+="<br>"+"<b>"+sum +" "+"RS";
+    var d=(17/100)*sum;
+    var gross_total=sum+d;
+    document.getElementById('gross').innerHTML="Total Price: "+"<br>"+"Sales Tax: "+"<br>"+"Gross Total: ";
+    document.getElementById('value').innerHTML=sum+" "+"Rs"+"<br>"+"17%"+"<br>"+gross_total+" "+"Rs";
+    function show()
+    {
+        window.print();
+    }
+  </script>
+  </body>
+  
+  
+</html>
